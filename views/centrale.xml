@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vue Formulaire -->
+    <record id="view_atm_centrale_form" model="ir.ui.view">
+        <field name="name">atm.centrale.form</field>
+        <field name="model">atm.centrale</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+     <!-- Vue Liste -->
+    <record id="view_atm_centrale_tree" model="ir.ui.view">
+        <field name="name">atm.centrale.tree</field>
+        <field name="model">atm.centrale</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <!-- Action -->
+    <record id="action_atm_centrale" model="ir.actions.act_window">
+        <field name="name">Centrale</field>
+        <field name="res_model">atm.centrale</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Gérer les centrales de pointeuse ici.
+            </p>
+        </field>
+    </record>
+</odoo>

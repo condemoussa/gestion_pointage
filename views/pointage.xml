@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+     <!-- Vue Liste -->
+    <record id="view_atm_pointeuse_tree" model="ir.ui.view">
+        <field name="name">atm.pointeuse.tree</field>
+        <field name="model">atm.pointeuse</field>
+        <field name="arch" type="xml">
+           <tree string="" class="text-center" editable="top" default_order="name asc, id asc">
+                <field name="name" string="Libelle"/>
+                 <field name="centrale" string="Centrales"/>
+                 <field name="val1" string="Valeur"/>
+                 <field name="ref"/>
+                 <field name="mois" optional="hide"/>
+                <field name="annee" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="view_seach_pointeuse" model="ir.ui.view">
+                    <field name="name">Pointeuse</field>
+                    <field name="model">atm.pointeuse</field>
+                    <field name="arch" type="xml">
+                        <search string="Pointeuse">
+                              <group expand="0" string="Group By">
+                                <filter string="Année" name="annee" domain="[]" context="{'group_by': 'annee'}"  />
+                            </group>
+
+                            <group expand="0" string="Group By">
+                                <filter string="Mois" name="mois" domain="[]" context="{'group_by': 'mois'}"  />
+                            </group>
+
+                            <group expand="0" string="Group By">
+                                <filter string="Centrale" name="centrale" domain="[]" context="{'group_by': 'centrale'}"  />
+                            </group>
+                        </search>
+                    </field>
+     </record>
+
+    <!-- Action pour la gestion des pointeuses -->
+    <record id="action_atm_pointeuse" model="ir.actions.act_window">
+        <field name="name">Pointeuses</field>
+        <field name="res_model">atm.pointeuse</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p>
+                Gérez ici vos pointeuses et associez-les à des centrales.
+            </p>
+        </field>
+    </record>
+
+
+
+
+
+</odoo>

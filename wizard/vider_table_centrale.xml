@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_vider_table_centrale">
+            <field name="name">VIDER LES TABLES</field>
+            <field name="model">vider.centrale</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="VIDER LES TABLES">
+                    <sheet>
+                        <group>
+                        <h2>VIDER LES TABLES</h2>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="vider_centrale" type="object" string="Valider"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="wizard_action_vide_centrale">
+            <field name="name">VIDER LES TABLES</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vider.centrale</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_vider_table_centrale"/>
+        </record>
+
+
+
+    </data>
+</odoo>

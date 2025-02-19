@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_pointeuse">
+            <field name="name">POINTEUSE</field>
+            <field name="model">wizard.pointeuse</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="CENTRAGE">
+                    <sheet>
+                        <group>
+                             <group>
+                                <field name="annee"/>
+                             </group>
+                             <group>
+                               <field name="mois"/>
+                          </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_pointeuse" type="object" string="Pointeuse"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="wizard_action_pointeuse">
+            <field name="name">POINTEUSE</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.pointeuse</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_pointeuse"/>
+        </record>
+
+         <!-- Action pour générer le PDF -->
+
+        <record id="action_pointeuse_xlsx" model="ir.actions.report">
+            <field name="name">STATISTIQUE DE LA POINTEUSE</field>
+            <field name="model">wizard.pointeuse</field>
+            <field name="binding_model_id" ref="model_wizard_pointeuse"/>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">gestion_pointage.statistiquea_pointeuse</field>
+            <field name="report_file">gestion_pointage.statistiquea_pointeuse</field>
+            <field name="binding_view_types">list</field>
+              <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

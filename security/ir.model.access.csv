@@ -1,0 +1,13 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_atm_centrale,atm.centrale,model_atm_centrale,,1,1,1,1
+access_vider_centrale,vider.centrale,model_vider_centrale,,1,1,1,1
+access_atm_pointeuse,atm.pointeuse,model_atm_pointeuse,,1,1,1,1
+access_wizard_pointeuse,wizard.pointeuse,model_wizard_pointeuse,,1,1,1,1
+
+
+
+
+
+
+
+

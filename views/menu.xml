@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <!-- menu general  -->
+      <menuitem name="GESTION DE LA POINTEUSE" id="menu_atm_centrale_root"  />
+
+        <!-- *************************************************************** -->
+      <!-- menu gestion des centre d imputation -->
+
+      <menuitem
+                    name="Centrale" id="id_centrale"
+                    parent="menu_atm_centrale_root"
+                     action="action_atm_centrale"
+                    sequence="1"
+            />
+
+       <menuitem
+                    name="Pointeuse" id="id_pointeuse"
+                    parent="menu_atm_centrale_root"
+                     action="action_atm_pointeuse"
+                    sequence="2"
+            />
+
+       <menuitem
+                    name="Rapport" id="id_rapport_excels"
+                    parent="menu_atm_centrale_root"
+                    action="wizard_action_pointeuse"
+                    sequence="3"
+            />
+        <menuitem
+                    name="Vider les tables" id="id_vider_tables"
+                    parent="menu_atm_centrale_root"
+                    action="wizard_action_vide_centrale"
+                    sequence="4"
+            />
+
+  </data>
+</odoo>
