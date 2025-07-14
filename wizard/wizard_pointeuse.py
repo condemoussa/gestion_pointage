@@ -42,6 +42,7 @@ class WizardPointeuse(models.TransientModel):
         lines30 = []
         lines31 = []
 
+
         pointeuse = self.env["atm.pointeuse"].search([("ref","=",'m1'),("mois","=",self.mois),("annee","=",self.annee)])
         pointeuse2 = self.env["atm.pointeuse"].search([('ref', '=','m2'),("mois","=",self.mois),("annee","=",self.annee)])
         pointeuse3 = self.env["atm.pointeuse"].search(  [('ref', '=', 'm3'), ("mois", "=", self.mois), ("annee", "=", self.annee)])
@@ -79,6 +80,8 @@ class WizardPointeuse(models.TransientModel):
         pointeuse30 = self.env["atm.pointeuse"].search([('ref', '=', 'm30'), ("mois", "=", self.mois), ("annee", "=", self.annee)])
 
         pointeuse31 = self.env["atm.pointeuse"].search([('ref', '=', 'm31'), ("mois", "=", self.mois), ("annee", "=", self.annee)])
+
+
 
         for line in pointeuse:
             vals = {

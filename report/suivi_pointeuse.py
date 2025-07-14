@@ -11,6 +11,7 @@ class StatistiquePointeuse(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, partners):
         # form_data=data['form_date']
+        data_test = data['test12']
         data_payroll=data['line_data']
         data2 = data['data2']
         data3 = data['data3']
@@ -148,10 +149,10 @@ class StatistiquePointeuse(models.AbstractModel):
             # Initialisation de total_pointuse
             total_pointuse = 0
 
-
             if i < len(data_payroll):  # Ajouter les données de data_payroll
-                sheet.write(row, col, data_payroll[i]['name'], header_numero_dossier)
                 total_pointuse += data_payroll[i]['valeur1']
+                sheet.write(row, col, data_payroll[i]['name'], header_numero_dossier)
+
                 if data_payroll[i]['valeur1'] == 1 :
                     background1 = workbook.add_format({'bg_color': 'green', 'align': 'center','valign': 'vcenter', 'size': 8, 'color': 'black', 'border': '1'})
                     sheet.write(row, col + 1, data_payroll[i]['valeur1'], background1)
